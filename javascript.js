@@ -6,6 +6,7 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerHeight;
 canvas.height = window.innerHeight;
 
+
 var imageWidth;
 var imageHeight;
 var player;
@@ -349,7 +350,7 @@ class Player {
 			keyboard.keyH = false
 		}
 
-		//if toolbar button, quick weapon chaning.
+		//if toolbar button, quick weapon changing.
 		if (shop.turretUnlocked > 0 && keyboard.key1) {
 			setWeapon(1, shop.turretUnlocked);
 		} else if (shop.machinegunUnlocked > 0 && keyboard.key2) {
@@ -2371,7 +2372,6 @@ class EndGame {
 	}
 }
 
-
 class HUD {
 	constructor() {
 		this.cash = 0;
@@ -2739,7 +2739,6 @@ function handler() {
 
 //Testing
 var start;
-var millis;
 var frames = 0;
 var reset = true;
 var calc;
@@ -3064,15 +3063,24 @@ turretTier4.src = "art/turretsTier4.png";
 const imageBlueprints = [tankTier1, tankTier2, tankTier3, tankTier4];
 
 
-
 window.addEventListener("resize",
 	function () {
+		// let size;
+		// if (window.innerHeight < 900) {
+		// 	size = 900;
+		// } else if (window.innerHeight > 900 && window.innerHeight <= 1200) {
+		// 	size = window.innerHeight;
+		// }
+
+
 		let size;
-		if (window.innerHeight < 900) {
-			size = 900;
-		} else if (window.innerHeight > 900 && window.innerHeight <= 1200) {
+		if (window.innerHeight < 800) {
+			size = 800;
+		} else if (window.innerHeight > 800 && window.innerHeight <= 1200) {
 			size = window.innerHeight;
 		}
+
+
 		canvas.width = size;
 		canvas.height = size;
 
