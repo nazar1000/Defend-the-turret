@@ -3065,14 +3065,7 @@ const imageBlueprints = [tankTier1, tankTier2, tankTier3, tankTier4];
 
 window.addEventListener("resize",
 	function () {
-		// let size;
-		// if (window.innerHeight < 900) {
-		// 	size = 900;
-		// } else if (window.innerHeight > 900 && window.innerHeight <= 1200) {
-		// 	size = window.innerHeight;
-		// }
-
-
+		canvasPosition = canvas.getBoundingClientRect();
 		let size;
 		if (window.innerHeight < 800) {
 			size = 800;
@@ -3080,9 +3073,10 @@ window.addEventListener("resize",
 			size = window.innerHeight;
 		}
 
-
 		canvas.width = size;
 		canvas.height = size;
+
+		
 
 	});
 
